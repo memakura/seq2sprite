@@ -2,9 +2,13 @@
 
 <a href="#english">(English)</a>
 
-複数枚の画像 (png, svg) から、Scratch（スクラッチ）のスプライトとして読み込めるファイルを作ります。
+複数枚の画像 (png, svg) から、Scratch（スクラッチ）のスプライトファイルを作ります。
 
-普通にスクラッチで複数枚の画像をコスチューム読むと、順序がばらばらになりますが、この方法だとファイル名順に読み込まれます。
+スクラッチの「ファイルから新しいコスチュームをアップロード」で複数枚の画像を読むと、順序がばらばらになって大変な場合があります。この方法だとファイル名順に画像をコスチュームとして読み込むことができます。
+
+## かんたんな使い方の説明
+
+コスチュームにしたい画像を `img` という名前のフォルダに入れておき、ここで紹介するスクリプトを実行すると、スクラッチで読み込めるスプライトが出来上がります。以下で詳しい手順を説明します。
 
 ## 使い方
 
@@ -34,7 +38,7 @@
 
 ### スクラッチからのスプライトファイルの開き方
 
-1. Scratchで [新しいスプライト] のところにある [ファイルから新しいスプライトをアップロード] をクリックし、出来上がったスプライトのファイル (`work.zip`, `work (数字).zip`, もしくは　`work.sprite2`)を開きます。
+1. スクラッチの「スプライト」「新しいスプライト」のところにあるアイコンで [ファイルから新しいスプライトをアップロード] をクリックし、出来上がったスプライトのファイル (`work.zip`, `work (数字).zip`, もしくは　`work.sprite2`)を開きます。
 1. これでスプライトに myCandle という名前のスプライトが新しく追加できます。
     1. スプライトの名前は青丸で i と書かれたところをクリックすると変更できます。
 
@@ -98,9 +102,9 @@ Convert a sequence of images (png, svg) to a sprite file that can be imported to
 
 ### Open a created sprite file from Scratch
 
-1. Scratch:  [新しいスプライト] のところにある [ファイルから新しいスプライトをアップロード] をクリックし、出来上がったスプライトのファイル (`work.zip`, `work (数字).zip`, もしくは　`work.sprite2`)を開きます。
-1. これでスプライトに myCandle という名前のスプライトが新しく追加できます。
-    1. スプライトの名前は青丸で i と書かれたところをクリックすると変更できます。
+1. Select "Upload sprite from file" icon in the "New Sprite" section, which is located at the top of "Sprites" subwindow. Load a created file (work.zip`, `work (<number>).zip`, or `work.sprite2`).
+1. A sprite named "myCandle" will appear in the "Sprites" subwindow.
+    1. You can change the sprite name by clicking the top-left blue "i" icon.
 
 
 ## Use different image size or SVG files
