@@ -4,7 +4,7 @@
 
 Convert a sequence of images (png, svg) to a sprite file that can be imported to your Scratch project.
 
-`New costume > Upload costume from file` allows you to upload multiple costumes at once but does not maintain the original order of image files. Using the sprite generator tool introduced here, you can create a sprite that has a lot of costumes in the same order as the original image-name order. This can be utilized for projects using animations.
+In Scratch, [New costume] > [Upload costume from file] allows you to upload multiple costumes at once but does not maintain the original order of image files. Using the sprite generator tool introduced here, you can create a sprite that has a lot of costumes in the same order as the original image-name order. This can be utilized for projects using animations. ([Demo video](#demovideo))
 
 ![flow](readme_figs/flow-en.png)
 
@@ -16,7 +16,7 @@ Convert a sequence of images (png, svg) to a sprite file that can be imported to
 1. Replace the sample image sequence in `img` folder with your image sequence. (You can first try with the original example files.)
     1. If you want to keep a used `img` folder, change the name to backup it and create a new empty `img` folder.
     1. The base name of each file (for example, c0001 of c0001.png) is used as a costume name.
-    1. All the image sizes are assumed to be the same 240x300. If you want to change the size, please see <a href="#imgsize-en">here</a>.
+    1. All the image sizes are assumed to be the same 240x300. If you want to change the size, please see <a href="#imgsize">here</a>.
 1. Run either `seq2sprite.bat` or `seq2sprite.sh` depending your environment; see below for details.
     
 ### Windows (Use seq2sprite.bat)
@@ -36,8 +36,6 @@ Convert a sequence of images (png, svg) to a sprite file that can be imported to
    ```
 1. Run the script by `./seq2sprite.sh`, and a file called `work.sprite2` is generated.
 
-<a name="imgsize-en">
-
 ### Open a created sprite file from Scratch
 
 1. Select "Upload sprite from file" icon in the "New Sprite" section, which is located at the top of "Sprites" subwindow. Load a created file (work.zip`, `work (<number>).zip`, or `work.sprite2`).
@@ -46,6 +44,14 @@ Convert a sequence of images (png, svg) to a sprite file that can be imported to
 
 ![Screenshot](readme_figs/screen-en.png)
 
+<a name="demovideo">
+
+### Demo Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7QLjaB54ZRM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+<a name="imgsize">
 
 ## Use different image size or SVG files
 
