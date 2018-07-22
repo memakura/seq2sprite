@@ -69,6 +69,6 @@ pngではなくsvgファイルを使う場合は `EXT=png` を `EXT=svg` に変�
 DL Stock Footage の "Candle flame being blown out 1 | Free Stock Footage"
 を ffmpeg により切り出して png ファイルを用意しました。他にもいくつかいい感じの映像が公開されています。
 
-- https://www.youtube.com/watch?v=aWPOiYs20XU
+- https://www.youtube.com/watch?v=dlHyoPC0hcw
 - https://www.facebook.com/dlstockfootage/
 
