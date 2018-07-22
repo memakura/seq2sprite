@@ -9,7 +9,7 @@ set WORK_DIR=work
 set JSON=%WORK_DIR%\sprite.json
 
 if not exist %IMG_DIR% (
-    echo "Dir: %IMG_DIR% not exist"
+    echo "Error: folder [%IMG_DIR%] does not exist"
     exit
 )
 
