@@ -4,19 +4,21 @@
 
 Convert a sequence of images (png, svg) to a sprite file that can be imported to your Scratch project.
 
-In Scratch, [New costume] > [Upload costume from file] allows you to upload multiple costumes at once but does not maintain the original order of image files. Using the sprite generator tool introduced here, you can create a sprite that has a lot of costumes in the same order as the original image-name order. This can be utilized for projects using animations. ([Demo video](#demovideo))
+In Scratch, [Upload costume from file] allows you to upload multiple costumes at once but does not maintain the original order of image files. Using the sprite generator tool introduced here, you can create a sprite that has a lot of costumes in the same order as the original image-name order. This can be utilized for projects using, for example, realistic animations. ([Demo video](#demovideo))
 
 ![flow](readme_figs/flow-en.png)
 
 
 ## Usage
 
-1. Download [seq2sprite-master.zip](https://github.com/memakura/seq2sprite/archive/master.zip), open the zip file, and copy/move `seq2sprite-master` folder inside to other folder, for example, `Documents`.
-1. Open `seq2sprite-master` folder.
-1. Replace the sample image sequence in `img` folder with your image sequence. (You can first try with the original example files.)
-    1. If you want to keep a used `img` folder, change the name to backup it and create a new empty `img` folder.
-    1. The base name of each file (for example, c0001 of c0001.png) is used as a costume name.
-    1. All the image sizes are assumed to be the same 240x300. If you want to change the size, please see <a href="#imgsize">here</a>.
+1. Download [zip archive of this project](https://github.com/memakura/seq2sprite/archive/master.zip), open the zip file, and copy/move `img` folder and either `seq2sprite.bat` or `seq2sprite.sh` (explained later) to other folder, for example, a new folder under your `Documents` folder.
+    - In what follows, we assume that **a folder named `seq2sprite` is created under `Documents` folder** and that `img` and a script file is copied there.
+    - `img` folder contains sample images.
+1. Open `seq2sprite` folder.
+1. Replace the sample image sequence in `img` folder with your image sequence. (You can first try with the original sample files.)
+    - If you want to keep a used `img` folder, change the name to backup it and create a new empty `img` folder.
+    - The base name of each file (for example, c0001 of c0001.png) is used as a costume name.
+    - All the image sizes are assumed to be the same 240x300. If you want to change the size, please see <a href="#imgsize">here</a>.
 1. Run either `seq2sprite.bat` or `seq2sprite.sh` depending your environment; see below for details.
     
 ### Windows (Use seq2sprite.bat)
@@ -30,25 +32,28 @@ In Scratch, [New costume] > [Upload costume from file] allows you to upload mult
 **(Note) zip command is required.**
 
 1. Open bash (terminal). If you use Mac, type "terminal" from Launchpad or Spotlight search.
-1. Change directory to seq2image-master. 
+1. Change the current folder by typing the following command. 
    ```
-   cd /Users/<user name>/Documents/seq2sprite-master
+   cd /Users/<user name>/Documents/seq2sprite
    ```
+   - Press `return` after you typed.
+   - Command `cd` means change directory (folder). You can also use `pwd` and `ls` to check the path to the current folder and files/folders under the current folder, respectively. `ls` should show `img/` and `seq2sprite.sh`.
 1. Run the script by `./seq2sprite.sh`, and a file called `work.sprite2` is generated.
 
 ### Open a created sprite file from Scratch
 
-1. Select "Upload sprite from file" icon in the "New Sprite" section, which is located at the top of "Sprites" subwindow. Load a created file (work.zip`, `work (<number>).zip`, or `work.sprite2`).
-1. A sprite named "myCandle" will appear in the "Sprites" subwindow.
-    1. You can change the sprite name by clicking the top-left blue "i" icon.
+1. Select "Upload sprite from file" icon in the "New Sprite" section (see the figure below). Load a created file (`work.zip`, `work (...).zip`, or `work.sprite2`).
 
-![Screenshot](readme_figs/screen-en.png)
+   ![screenshot](readme_figs/screen-en.png)
+
+1. A sprite named "myCandle" will appear in the "Sprites" subwindow. You can change the sprite name by clicking the top-left blue "i" icon.
+
 
 <a name="demovideo">
 
 ### Demo Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7QLjaB54ZRM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="522" height="315" src="https://www.youtube.com/embed/7QLjaB54ZRM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 <a name="imgsize">
@@ -58,21 +63,22 @@ In Scratch, [New costume] > [Upload costume from file] allows you to upload mult
 If each image size is different from 240 x 300, open a script file (`seq2sprite.bat` or `seq2sprite.sh`), and change the following lines. Recommended numbers are the half of your image size (each of width and height).
 
 ```
-    echo 			"rotationCenterX": 120,
-    echo 			"rotationCenterY": 150
+    "rotationCenterX": 120,
+    "rotationCenterY": 150
 ```
 
 If you want to use svg files, change `EXT=png` to `EXT=svg`.
 
 
-## About the sample images
+## About the sample images (credit)
 
-Sample images in the img folder are extracted from the video
-
+Candle images used on this web page and the sample images in `img` folder are from the video
 "Candle flame being blown out 1 | Free Stock Footage"
+by DL Stock Footage. They also provide several other nice video clips. 
 
-by DL Stock Footage. They provide several nice video clips. 
+- [https://www.youtube.com/watch?v=dlHyoPC0hcw](https://www.youtube.com/watch?v=dlHyoPC0hcw)
+- [https://www.facebook.com/dlstockfootage/](https://www.facebook.com/dlstockfootage/)
 
-- https://www.youtube.com/watch?v=dlHyoPC0hcw
-- https://www.facebook.com/dlstockfootage/
+## About other video clips
 
+[https://www.techradar.com/news/the-best-free-stock-video-sites](https://www.techradar.com/news/the-best-free-stock-video-sites) introduces many free stock video sites. For example, [Videvo (Free Stock Video Footage)](https://www.videvo.net/) has many useful videos with a free license ([see here for the details of license information](https://www.videvo.net/faqs/)).
