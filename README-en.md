@@ -1,6 +1,6 @@
 # Scratch sprite generator for Windows/Mac/Linux
 
-[Japanese](README-ja.md)
+[(Japanese)](README.md)
 
 Convert a sequence of images (png, svg) to a sprite file that can be imported to your Scratch project.
 
@@ -34,7 +34,7 @@ Convert a sequence of images (png, svg) to a sprite file that can be imported to
    ```
 1. Run the script by `./seq2sprite.sh`, and a file called `work.sprite2` is generated.
 
-<a name="imgsize-ja">
+<a name="imgsize-en">
 
 ### Open a created sprite file from Scratch
 

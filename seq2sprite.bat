@@ -7,6 +7,7 @@ setlocal enabledelayedexpansion
 set IMG_DIR=img
 set WORK_DIR=work
 set JSON=%WORK_DIR%\sprite.json
+set EXT=png
 
 if not exist %IMG_DIR% (
     echo "Error: folder [%IMG_DIR%] does not exist"
@@ -27,7 +28,7 @@ if exist %JSON% del %JSON%
 
 
 set i=0
-for %%f in (%IMG_DIR%\*.png) do (
+for %%f in (%IMG_DIR%\*.%EXT%) do (
     echo %%f
 
     if not !i! == 0 (
@@ -40,14 +41,14 @@ for %%f in (%IMG_DIR%\*.png) do (
     (
     echo 			"costumeName": "%%~nf",
     echo 			"baseLayerID": !i!,
-    echo 			"baseLayerMD5": "!i!.png",
+    echo 			"baseLayerMD5": "!i!.%EXT%",
     echo 			"bitmapResolution": 1,
     echo 			"rotationCenterX": 120,
     echo 			"rotationCenterY": 150
     ) >> %JSON%
 
     rem Copy each image file to work directory
-    copy %%f %WORK_DIR%\!i!.png
+    copy %%f %WORK_DIR%\!i!.%EXT%
 
     set /a i+=1
     rem @echo !i!

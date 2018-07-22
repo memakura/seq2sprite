@@ -1,6 +1,6 @@
 # 複数枚の画像からスクラッチ用スプライトを作るツール (Windows/Mac/Linux)
 
-[English](README-en.md)
+[(English)](README-en.md)
 
 複数枚の画像 (png, svg) から、Scratch（スクラッチ）のスプライトファイルを作ります。
 
@@ -33,9 +33,7 @@
 
 1. bash の使えるコマンドプロンプトを開きます。(Macは Launchpad や Spotlight検索で、ter.. ぐらいを打ち込むとターミナルを選べます。）
 1. コピーした場所に行きます。Macだと[書類]にコピーしたのであれば、以下を打ち込んでフォルダを移動します。
-   ```
-   cd /Users/ユーザ名/Documents/seq2sprite-master
-   ``` 
+   `cd /Users/ユーザ名/Documents/seq2sprite-master`
    （最後に return を押します。途中でtabキーを押すとファイル名などが補完できます。）
 1. `./seq2sprite.sh` と打ち込んでreturnキーを押すと、`work.sprite2` というファイルが出来上がるので、スクラッチから読み込むことができます。
 

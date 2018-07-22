@@ -1,10 +1,11 @@
-#!/bin/bash
+#!/bin/bash -x
 
 # 2018.7.22 memakura
 
 IMG_DIR=img
 WORK_DIR=work
 JSON=$WORK_DIR/sprite.json
+EXT=png
 
 if [ ! -d $IMG_DIR ]; then
      echo "Error: folder [$IMG_DIR] does not exist"
@@ -28,7 +29,7 @@ cat <<EOD > $JSON
 EOD
 
 i=0
-for f in $IMG_DIR/*.png; do
+for f in $IMG_DIR/*.$EXT; do
     echo $f
 
     if [ $i -ne 0 ]; then
@@ -39,16 +40,16 @@ EOD
     fi
 
     cat <<EOD >> $JSON
-            "costumeName": "`basename $f .png`",
+            "costumeName": "`basename $f .$EXT`",
             "baseLayerID": $i,
-			"baseLayerMD5": "$i.png",
+			"baseLayerMD5": "$i.$EXT",
 			"bitmapResolution": 1,
 			"rotationCenterX": 120,
 			"rotationCenterY": 150
 EOD
 
     # Copy each image file to work directory
-    cp $f $WORK_DIR/$i.png
+    cp $f $WORK_DIR/$i.$EXT
 
     i=$((i += 1))
     echo $i
