@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 # 2018.7.22 memakura
 

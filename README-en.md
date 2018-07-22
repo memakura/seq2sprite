@@ -27,6 +27,8 @@ Convert a sequence of images (png, svg) to a sprite file that can be imported to
 
 ### Mac, Linux, Windows bash (mingw, cygwin, subsystem) (Use seq2sprite.sh)
 
+**(Note) zip command is required.**
+
 1. Open bash (terminal). If you use Mac, type "terminal" from Launchpad or Spotlight search.
 1. Change directory to seq2image-master. 
    ```

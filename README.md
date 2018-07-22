@@ -31,6 +31,8 @@
 
 ### Mac/Linux, Windowsのbash環境 (subsystem, mingw, cygwin) (seq2sprite.sh を利用)
 
+**（注意）zipコマンドが必要です。**
+
 1. bash の使えるコマンドプロンプトを開きます。(Macは Launchpad や Spotlight検索で、ter.. ぐらいを打ち込むとターミナルを選べます。）
 1. コピーした場所に行きます。Macだと[書類]にコピーしたのであれば、以下を打ち込んでフォルダを移動します。
    `cd /Users/ユーザ名/Documents/seq2sprite-master`
