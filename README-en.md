@@ -17,7 +17,7 @@ In Scratch, [Upload costume from file] allows you to upload multiple costumes at
 1. Open `seq2sprite` folder.
 1. Replace the sample image sequence in `img` folder with your image sequence. (You can first try with the original sample files.)
     - If you want to keep a used `img` folder, change the name to backup it and create a new empty `img` folder.
-    - The base name of each file (for example, c0001 of c0001.png) is used as a costume name.
+    - The base name of each file (for example, c0005 of c0005.png) is used as a costume name.
     - All the image sizes are assumed to be the same 240x300. If you want to change the size, please see <a href="#imgsize">here</a>.
 1. Run either `seq2sprite.bat` or `seq2sprite.sh` depending your environment; see below for details.
     
