@@ -71,3 +71,20 @@ for %%f in (%IMG_DIR%\*.%EXT%) do (
     echo }
 ) >> %JSON%
 
+if exist %WORK_DIR% (
+    rem Backup
+    if exist %WORK_DIR%.sprite2 (
+        move %WORK_DIR%.sprite2 %WORK_DIR%.sprite2.bak
+    )
+    if exist %WORK_DIR%.zip (
+        move %WORK_DIR%.zip %WORK_DIR%.zip.bak
+    )
+
+    rem Generate a zip (sprite) file (requires powershell >=v5; Win10 default)
+    (
+        echo Compress-Archive -Path "%WORK_DIR%" -DestinationPath "%WORK_DIR%.zip"
+    ) | powershell -c -
+    if exist %WORK_DIR%.zip (
+        move %WORK_DIR%.zip %WORK_DIR%.sprite2
+    )
+)

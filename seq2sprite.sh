@@ -71,12 +71,12 @@ cat <<EOD >> $JSON
 }
 EOD
 
-# Backup
-if [ -f $WORK_DIR.sprite2 ];then
-    mv $WORK_DIR.sprite2 $WORK_DIR.sprite2.bak
-fi
 
-# Generate a zip (sprite) file
 if [ -d $WORK_DIR ]; then
-    zip $WORK_DIR.zip $WORK_DIR/* && mv $WORK_DIR.zip $WORK_DIR.sprite2
+    # Backup
+    if [ -f $WORK_DIR.sprite2 ];then
+        mv $WORK_DIR.sprite2 $WORK_DIR.sprite2.bak
+    fi
+    # Generate a zip (sprite) file
+    zip $WORK_DIR.sprite2 $WORK_DIR/*
 fi
