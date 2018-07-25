@@ -1,6 +1,6 @@
 @echo off
 
-rem 2018.7.21 memakura
+rem 2018.7.21-25 memakura
 
 setlocal enabledelayedexpansion
 
@@ -9,9 +9,13 @@ set WORK_DIR=work
 set JSON=%WORK_DIR%\sprite.json
 set EXT=png
 
+if "%SCRATCH_VER%" == "" set SCRATCH_VER=2
+
+set SPRITE_EXT=sprite%SCRATCH_VER%
+
 if not exist %IMG_DIR% (
     echo "Error: folder [%IMG_DIR%] does not exist"
-    exit
+    exit /b 1
 )
 
 rem Create work directory
@@ -20,16 +24,35 @@ mkdir %WORK_DIR%
 
 if exist %JSON% del %JSON%
 
-(
-    echo {
-    echo 	"objName": "myCandle",
-    echo 	"costumes": [{
-) > %JSON%
-
+if %SCRATCH_VER% == 2 (
+    (
+        echo {
+        echo 	"objName": "myCandle",
+        echo 	"costumes": [{
+    ) > %JSON%
+) else (
+    (
+        echo {
+        echo 	"isStage": false,
+        echo 	"name": "myCandle",
+        echo 	"variables": {},
+        echo 	"lists": {},
+        echo 	"broadcasts": {},
+        echo 	"blocks": {},
+        echo 	"comments": {},
+        echo 	"currentCostume": 0,
+        echo 	"costumes": [{
+    ) > %JSON%
+)
 
 set i=0
 for %%f in (%IMG_DIR%\*.%EXT%) do (
     echo %%f
+    for /f "usebackq tokens=*" %%t in (`%SYSTEMROOT%\System32\certutil -hashfile %%f MD5 ^| findstr /v "MD5 CertUtil ECHO"`) do (
+        set _md5=%%t
+    )
+    rem Remove space (for Win7-8.1)
+    set md5str=!_md5: =!
 
     if not !i! == 0 (
         (
@@ -38,53 +61,79 @@ for %%f in (%IMG_DIR%\*.%EXT%) do (
         ) >> %JSON%
     )
 
-    (
-    echo 			"costumeName": "%%~nf",
-    echo 			"baseLayerID": !i!,
-    echo 			"baseLayerMD5": "!i!.%EXT%",
-    echo 			"bitmapResolution": 1,
-    echo 			"rotationCenterX": 120,
-    echo 			"rotationCenterY": 150
-    ) >> %JSON%
-
-    rem Copy each image file to work directory
-    copy %%f %WORK_DIR%\!i!.%EXT%
+    if %SCRATCH_VER% == 2 (
+        (
+            echo 			"costumeName": "%%~nf",
+            echo 			"baseLayerID": !i!,
+            echo 			"baseLayerMD5": "!md5str!.%EXT%",
+            echo 			"bitmapResolution": 1,
+            echo 			"rotationCenterX": 120,
+            echo 			"rotationCenterY": 150
+        ) >> %JSON%
+        rem Copy each image file to work directory
+        copy %%f %WORK_DIR%\!i!.%EXT%
+    ) else (
+        (
+            echo 			"assetId": "!md5str!",
+            echo 			"name": "%%~nf",
+            echo 			"bitmapResolution": 1,
+            echo 			"md5ext": "!md5str!.%EXT%",
+            echo 			"dataFormat": "%EXT%",
+            echo 			"rotationCenterX": 120,
+            echo 			"rotationCenterY": 150
+        ) >> %JSON%
+        rem Copy each image file to work directory
+        copy %%f %WORK_DIR%\!md5str!.%EXT%
+    )
 
     set /a i+=1
     rem @echo !i!
 )
 
-
-(
-    echo 		}],
-    echo 	"currentCostumeIndex": 0,
-    echo 	"scratchX": 0,
-    echo 	"scratchY": 0,
-    echo 	"scale": 1,
-    echo 	"direction": 90,
-    echo 	"rotationStyle": "normal",
-    echo 	"isDraggable": false,
-    echo 	"indexInLibrary": 100000,
-    echo 	"visible": true,
-    echo 	"spriteInfo": {
-    echo 	}
-    echo }
-) >> %JSON%
-
-if exist %WORK_DIR% (
-    rem Backup
-    if exist %WORK_DIR%.sprite2 (
-        move %WORK_DIR%.sprite2 %WORK_DIR%.sprite2.bak
-    )
-    if exist %WORK_DIR%.zip (
-        move %WORK_DIR%.zip %WORK_DIR%.zip.bak
-    )
-
-    rem Generate a zip (sprite) file (requires powershell >=v5; Win10 default)
+if %SCRATCH_VER == 2 (
     (
-        echo Compress-Archive -Path "%WORK_DIR%" -DestinationPath "%WORK_DIR%.zip"
-    ) | powershell -c -
-    if exist %WORK_DIR%.zip (
-        move %WORK_DIR%.zip %WORK_DIR%.sprite2
-    )
+        echo 		}],
+        echo 	"currentCostumeIndex": 0,
+        echo 	"scratchX": 0,
+        echo 	"scratchY": 0,
+        echo 	"scale": 1,
+        echo 	"direction": 90,
+        echo 	"rotationStyle": "normal",
+        echo 	"isDraggable": false,
+        echo 	"indexInLibrary": 100000,
+        echo 	"visible": true,
+        echo 	"spriteInfo": {
+        echo 	}
+        echo }
+    ) >> %JSON%
+) else (
+    (
+        echo 		}],
+        echo 	"sounds": [],
+        echo 	"volume": 100,
+        echo 	"visible": true,
+        echo 	"x": 0,
+        echo 	"y": 0,
+        echo 	"size": 100,
+        echo 	"direction": 90,
+        echo 	"draggable": false,
+        echo 	"rotationStyle": "all around"
+        echo }
+    ) >> %JSON%
+)
+
+rem Backup
+if exist %WORK_DIR%.%SPRITE_EXT% (
+    move %WORK_DIR%.%SPRITE_EXT% %WORK_DIR%.%SPRITE_EXT%.bak
+)
+if exist %WORK_DIR%.zip (
+    move %WORK_DIR%.zip %WORK_DIR%.zip.bak
+)
+
+rem Generate a zip (sprite) file (requires powershell >=v5; Win10 default)
+(
+    echo Compress-Archive -Path "%WORK_DIR%\*" -DestinationPath "%WORK_DIR%.zip"
+) | powershell -c -
+if exist %WORK_DIR%.zip (
+    move %WORK_DIR%.zip %WORK_DIR%.%SPRITE_EXT%
 )

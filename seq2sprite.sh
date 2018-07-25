@@ -1,15 +1,56 @@
 #!/bin/bash
 
-# 2018.7.22 memakura
+# 2018.7.22-25 memakura
 
 IMG_DIR=img
 WORK_DIR=work
 JSON=$WORK_DIR/sprite.json
 EXT=png
+SCRATCH_VER=2
+
+usage_exit() {
+    echo "Usage: $0 [-2|-3] (default -2)"
+    exit 1
+}
+
+while getopts 23h OPT; do
+    case $OPT in
+        2)  SCRATCH_VER=2
+            ;;
+        3)  SCRATCH_VER=3
+            ;;
+        h)  usage_exit
+            ;;
+        \?) usage_exit
+            ;;
+    esac
+done
+
+SPRITE_EXT=sprite$SCRATCH_VER
+
+# Check commands
+if ! type zip > /dev/null 2>&1; then
+    echo "Error: Install [zip] before using this script"
+    exit 1
+fi
+
+NO_MD5SUM=0
+if ! type md5sum > /dev/null 2>&1; then
+    if [ $SCRATCH_VER -eq 3];then
+        echo "Error: Install [md5sum] before using this script"
+        echo "  (For Mac OS) If you already have Homebrew installed, try:"
+        echo "        $ brew install md5sha1sum"
+        exit 1
+    else
+        echo "Warning: [md5sum] is not installed."
+        NO_MD5SUM=1
+    fi
+fi
+
 
 if [ ! -d $IMG_DIR ]; then
-     echo "Error: folder [$IMG_DIR] does not exist"
-     exit 1
+    echo "Error: folder [$IMG_DIR] does not exist"
+    exit 1
 fi
 
 # Create work directory
@@ -22,15 +63,37 @@ if [ -f $JSON ]; then
     rm $JSON
 fi
 
-cat <<EOD > $JSON
+if [ $SCRATCH_VER -eq 2 ]; then
+    cat <<EOD > $JSON
 {
-    "objName": "myCandle",
-    "costumes": [{
+	"objName": "myCandle",
+	"costumes": [{
 EOD
+else
+    cat <<EOD > $JSON
+{
+	"isStage": false,
+	"name": "myCandle",
+	"variables": {},
+	"lists": {},
+	"broadcasts": {},
+	"blocks": {},
+	"comments": {},
+	"currentCostume": 0,
+	"costumes": [{
+EOD
+fi
 
 i=0
 for f in $IMG_DIR/*.$EXT; do
     echo $f
+    if [ $NO_MD5SUM -eq 1 ];then
+        # Only work for Scratch 2
+        baseLayerName=$i.$EXT
+    else
+        md5str=`md5sum $f | cut -d ' ' -f 1`
+        baseLayerName=$md5str.$EXT
+    fi
 
     if [ $i -ne 0 ]; then
         cat <<EOD >> $JSON
@@ -39,23 +102,37 @@ for f in $IMG_DIR/*.$EXT; do
 EOD
     fi
 
-    cat <<EOD >> $JSON
-            "costumeName": "`basename $f .$EXT`",
-            "baseLayerID": $i,
-			"baseLayerMD5": "$i.$EXT",
+    if [ $SCRATCH_VER -eq 2 ]; then
+        cat <<EOD >> $JSON
+			"costumeName": "`basename $f .$EXT`",
+			"baseLayerID": $i,
+			"baseLayerMD5": "$md5str.$EXT",
 			"bitmapResolution": 1,
 			"rotationCenterX": 120,
 			"rotationCenterY": 150
 EOD
-
-    # Copy each image file to work directory
-    cp $f $WORK_DIR/$i.$EXT
+        # Copy each image file to work directory
+        cp $f $WORK_DIR/$i.$EXT
+    else
+        cat <<EOD >> $JSON
+			"assetId": "$md5str",
+			"name": "`basename $f .$EXT`",
+			"bitmapResolution": 1,
+			"md5ext": "$md5str.$EXT",
+			"dataFormat": "$EXT",
+			"rotationCenterX": 120,
+			"rotationCenterY": 150
+EOD
+        # Copy each image file to work directory
+        cp $f $WORK_DIR/$md5str.$EXT
+    fi
 
     i=$((i += 1))
-    echo $i
+    # echo $i
 done
 
-cat <<EOD >> $JSON
+if [ $SCRATCH_VER -eq 2 ];then
+    cat <<EOD >> $JSON
 		}],
 	"currentCostumeIndex": 0,
 	"scratchX": 0,
@@ -70,13 +147,28 @@ cat <<EOD >> $JSON
 	}
 }
 EOD
-
-
-if [ -d $WORK_DIR ]; then
-    # Backup
-    if [ -f $WORK_DIR.sprite2 ];then
-        mv $WORK_DIR.sprite2 $WORK_DIR.sprite2.bak
-    fi
-    # Generate a zip (sprite) file
-    zip $WORK_DIR.sprite2 $WORK_DIR/*
+else
+    cat <<EOD >> $JSON
+		}],
+	"sounds": [],
+	"volume": 100,
+	"visible": true,
+	"x": 0,
+	"y": 0,
+	"size": 100,
+	"direction": 90,
+	"draggable": false,
+	"rotationStyle": "all around"
+}
+EOD
 fi
+
+
+# Backup
+if [ -f $WORK_DIR.$SPRITE_EXT ];then
+    mv $WORK_DIR.$SPRITE_EXT $WORK_DIR.$SPRITE_EXT.bak
+fi
+# Generate a zip (sprite) file
+zip -j $WORK_DIR.$SPRITE_EXT $WORK_DIR/*
+
+echo "Output: $WORK_DIR.$SPRITE_EXT"
