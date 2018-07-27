@@ -2,12 +2,16 @@
 
 [(English)](README-en.md)
 
-ビデオの1コマ目、2コマ目、・・のように、<ruby>順序<rp>（</rp><rt>じゅんじょ</rt><rp>）</rp></ruby>のある<ruby>複数枚<rp>（</rp><rt>ふくすうまい</rt><rp>）</rp></ruby>の<ruby>画像<rp>（</rp><rt>がぞう</rt><rp>）</rp></ruby>（これを<ruby>画像列<rp>（</rp><rt>がぞうれつ</rt><rp>）</rp></ruby>や画像シーケンス (image <u>seq</u>uence) と<ruby>呼<rp>（</rp><rt>よ</rt><rp>）</rp></ruby>びます）から、<ruby>Scratch<rp>（</rp><rt>すくらっち</rt><rp>）</rp></ruby>のスプライト (<u>sprite</u>) を作るツールです。png か svg という画像ファイル<ruby>形式<rp>（</rp><rt>けいしき</rt><rp>）</rp></ruby>を使えます。
+スクラッチ2の「ファイルから新しいコスチュームをアップロード」でたくさんの<ruby>画像<rp>（</rp><rt>がぞう</rt><rp>）</rp></ruby>を読むと、<ruby>順序<rp>（</rp><rt>じゅんじょ</rt><rp>）</rp></ruby>がばらばらになって<ruby>大変<rp>（</rp><rt>たいへん</rt><rp>）</rp></ruby>です。スクラッチ3では（今のところ？）<ruby>複数<rp>（</rp><rt>ふくすう</rt><rp>）</rp></ruby>のコスチュームをまとめてアップロードすることはできないようです。
+ここで<ruby>紹介<rp>（</rp><rt>しょうかい</rt><rp>）</rp></ruby>する<ruby>seq2sprite<rp>（</rp><rt>せっく・とぅー・すぷらいと</rt><rp>）</rp></ruby>というツールを使うと、元の画像ファイル名と同じ順に、多くのコスチュームを持つようなスプライトを作ることができます。たとえばスクラッチでアニメーションを使ったプロジェクトを作るときなどに役に立ちます。（[デモビデオ](#demovideo)）
 
-スクラッチ2の「ファイルから新しいコスチュームをアップロード」で複数枚の画像を読むと、<ruby>順序<rp>（</rp><rt>じゅんじょ</rt><rp>）</rp></ruby>がばらばらになって<ruby>大変<rp>（</rp><rt>たいへん</rt><rp>）</rp></ruby>です。スクラッチ3では（今のところ）複数のコスチュームを同時にアップロードはできないようです。
-ここで<ruby>紹介<rp>（</rp><rt>しょうかい</rt><rp>）</rp></ruby>する <ruby>seq2sprite<rp>（</rp><rt>せっく・とぅー・すぷらいと</rt><rp>）</rp></ruby> というツールを使うと、元の画像ファイル名と同じ順に、多くのコスチュームを持つようなスプライトを作ることができます。スクラッチでアニメーションを使ったプロジェクトを作るときなどに役に立ちます。（[デモビデオ](#demovideo)）
+png か svg という画像ファイル<ruby>形式<rp>（</rp><rt>けいしき</rt><rp>）</rp></ruby>を使えます。スクラッチ2 と スクラッチ3 のどちらにも<ruby>対応<rp>（</rp><rt>たいおう</rt><rp>）</rp></ruby>しています。
+
 
 ![flow](readme_figs/flow-ja.png)
+
+**なぜ seq2sprite という名前なの？** ビデオはパラパラマンガと同じで、1コマ目、2コマ目、・・・のような<ruby>順番<rp>（</rp><rt>じゅんばん</rt><rp>）</rp></ruby>のついた画像でできています。
+そんな順序のある複数<ruby>枚<rp>（</rp><rt>まい</rt><rp>）</rp></ruby>の画像を、<ruby>画像列<rp>（</rp><rt>がぞうれつ</rt><rp>）</rp></ruby>や画像シーケンス (image sequence) と<ruby>呼<rp>（</rp><rt>よ</rt><rp>）</rp></ruby>びます。このツールは、画像シーケンスからスクラッチのスプライトを作るので、英語の image <u>seq</u>uence <ruby><u>to</u><rp>（</rp><rt>とぅー</rt><rp>）</rp></ruby> <ruby><u>sprite</u><rp>（</rp><rt>すぷらいと</rt><rp>）</rp></ruby> を<ruby>略<rp>（</rp><rt>りゃく</rt><rp>）</rp></ruby>して seq2sprite としています。（two の発音が to と同じなので、to の当て字で数字の 2 を使っています。）
 
 
 ## かんたんな使い方の<ruby>説明<rp>（</rp><rt>せつめい</rt><rp>）</rp></ruby>
