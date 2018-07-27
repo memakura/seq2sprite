@@ -4,6 +4,8 @@ rem 2018.7.21-25 memakura
 
 setlocal enabledelayedexpansion
 
+set PATH=%PATH%;%SYSTEMROOT%\System32
+
 set IMG_DIR=img
 set WORK_DIR=work
 set JSON=%WORK_DIR%\sprite.json
@@ -48,7 +50,7 @@ if %SCRATCH_VER% == 2 (
 set i=0
 for %%f in (%IMG_DIR%\*.%EXT%) do (
     echo %%f
-    for /f "usebackq tokens=*" %%t in (`%SYSTEMROOT%\System32\certutil -hashfile %%f MD5 ^| findstr /v "MD5 CertUtil ECHO"`) do (
+    for /f "usebackq tokens=*" %%t in (`certutil -hashfile %%f MD5 ^| findstr /v "MD5 CertUtil ECHO"`) do (
         set _md5=%%t
     )
     rem Remove space (for Win7-8.1)
