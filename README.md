@@ -11,7 +11,7 @@ png か svg という画像ファイル<ruby>形式<rp>（</rp><rt>けいしき<
 ![flow](readme_figs/flow-ja.png)
 
 **なぜ seq2sprite という名前なの？** ビデオはパラパラマンガと同じで、1コマ目、2コマ目、・・・のような<ruby>順番<rp>（</rp><rt>じゅんばん</rt><rp>）</rp></ruby>のついた画像でできています。
-そんな順序のある複数<ruby>枚<rp>（</rp><rt>まい</rt><rp>）</rp></ruby>の画像を、<ruby>画像列<rp>（</rp><rt>がぞうれつ</rt><rp>）</rp></ruby>や画像シーケンス (image sequence) と<ruby>呼<rp>（</rp><rt>よ</rt><rp>）</rp></ruby>びます。このツールは、画像シーケンスからスクラッチのスプライトを作るので、英語の image <u>seq</u>uence <ruby><u>to</u><rp>（</rp><rt>とぅー</rt><rp>）</rp></ruby> <ruby><u>sprite</u><rp>（</rp><rt>すぷらいと</rt><rp>）</rp></ruby> を<ruby>略<rp>（</rp><rt>りゃく</rt><rp>）</rp></ruby>して seq2sprite としています。（two の発音が to と同じなので、to の当て字で数字の 2 を使っています。）
+そんな順序のある複数<ruby>枚<rp>（</rp><rt>まい</rt><rp>）</rp></ruby>の画像を、<ruby>画像列<rp>（</rp><rt>がぞうれつ</rt><rp>）</rp></ruby>や画像シーケンス (image sequence) と<ruby>呼<rp>（</rp><rt>よ</rt><rp>）</rp></ruby>びます。「画像シーケンスをスプライトへ (an image <u>seq</u>uence <ruby><u>to</u><rp>（</rp><rt>とぅー</rt><rp>）</rp></ruby> a <ruby><u>sprite</u><rp>（</rp><rt>すぷらいと</rt><rp>）</rp></ruby>)」を<ruby>略<rp>（</rp><rt>りゃく</rt><rp>）</rp></ruby>して seq2sprite としています。（two の発音が to と同じなので、to の当て字で数字の 2 を使っています。）
 
 
 ## かんたんな使い方の<ruby>説明<rp>（</rp><rt>せつめい</rt><rp>）</rp></ruby>
@@ -37,7 +37,8 @@ png か svg という画像ファイル<ruby>形式<rp>（</rp><rt>けいしき<
 
 **ファイルエクスプローラの [<ruby>表示<rp>（</rp><rt>ひょうじ</rt><rp>）</rp></ruby>] で [ファイル名<ruby>拡張子<rp>（</rp><rt>かくちょうし</rt><rp>）</rp></ruby>を表示] にチェックを入れておくと<ruby>便利<rp>（</rp><rt>べんり</rt><rp>）</rp></ruby>です。**
 
-1. `seq2sprite-s2.bat` をダブルクリックして実行すると、`work` というフォルダが出来上がります。**黒い画面が開きますが、勝手に閉じるまで待ってください。**Windows 10 を使っている場合は、`work.sprite2`というファイルも出来上がるので，これをスクラッチ2から読むことができます．スクラッチ3の場合は、`seq2sprite-s3.bat` を実行すると `work.sprite3`が出来上がるので、これを読みこみます。
+1. `seq2sprite-s2.bat` をダブルクリックして実行します。ダウンロードしてから初めて実行するときは、たとえば Windows 10 だと「WindowsによってPCが<ruby>保護<rp>（</rp><rt>ほご</rt><rp>）</rp></ruby>されました」と表示されるので、「詳細<ruby>情報<rp>（</rp><rt>じょうほう</rt><rp>）</rp></ruby>」をクリックしてから「実行」を<ruby>選<rp>（</rp><rt>えら</rt><rp>）</rp></ruby>んでください。
+1. すると、`work` というフォルダが出来上がります。**黒い画面が開きますが、勝手に閉じるまで待ってください。**Windows 10 を使っている場合は、`work.sprite2`というファイルも出来上がるので，これをスクラッチ2から読むことができます．スクラッチ3の場合は、`seq2sprite-s3.bat` を実行すると `work.sprite3`が出来上がるので、これを読みこみます。
 1. **Windows 7, 8, 8.1を使用している場合:** 出来上がった `work` フォルダをダブルクリックし、中にあるすべてのファイルを<ruby>選択<rp>（</rp><rt>せんたく</rt><rp>）</rp></ruby>し、右クリックを<ruby>押<rp>（</rp><rt>お</rt><rp>）</rp></ruby>して、メニューから [送る(N)] の [圧縮 (zip 形式)フォルダー] を選択します。すると、`work.zip` （すでにある場合は `work (数字).zip`）が出来上がります。スクラッチ2では、これを `work.sprite2`に、スクラッチ3では、`work.sprite3` という名前に変えて、**`work` というフォルダの外に置いておきます**。
 
 
@@ -86,7 +87,7 @@ png か svg という画像ファイル<ruby>形式<rp>（</rp><rt>けいしき<
 
 <iframe width="522" height="315" src="https://www.youtube.com/embed/7QLjaB54ZRM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-
+- [Scratch2で動かしてみる](https://scratch.mit.edu/projects/237552331/)
 
 <a name="imgsize">
 

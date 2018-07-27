@@ -24,8 +24,9 @@ In Scratch 2, [Upload costume from file] allows you to upload multiple costumes 
     
 ### Windows (Use seq2sprite.bat)
 
-1. Double click `seq2sprite-s2.bat`, and a folder named `work` will be created. **Wait until the opened (black) window is automatically closed.** If you are using Windows10, `work.sprite2` will also be created, and it can be imported to Scratch 2. For Scratch 3, run `seq2sprite-s3.bat` and it creates `work.sprite3`.
-1. **Only for Win7, 8, 8.1 users:** Double click `work` folder, select all the files inside, open a menu by right click, and select "Compressed (zipped) Folder" option from the "Send To" options. Then, change the name `work.zip` to `work.sprite2` or `work.sprite3` depending on the version of Scratch.
+1. Double click `seq2sprite-s2.bat`. If you are using Windows 10, you will see a warning message for the first time. Click "More info" and then select "Run anyway".
+1. A folder named `work` will be created. **Wait until the opened (black) window is automatically closed.** If you are using Windows10, `work.sprite2` will also be created, and it can be imported to Scratch 2. For Scratch 3, run `seq2sprite-s3.bat` and it creates `work.sprite3`.
+1. **Only for Win7, 8, 8.1 users:** Double click `work` folder, select all the files inside, open a menu by right click, and select "Compressed (zipped) Folder" option from the "Send To" options. Then, change the name `work.zip` to `work.sprite2` or `work.sprite3` depending on the version of Scratch, and move the file oudside of the `work` folder.
 
 ### Mac, Linux, Windows bash (mingw, cygwin, subsystem) (Use seq2sprite.sh)
 
