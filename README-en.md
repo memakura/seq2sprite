@@ -11,10 +11,11 @@ In Scratch 2, [Upload costume from file] allows you to upload multiple costumes 
 
 ## Usage
 
-1. Download [the archive of this project](https://github.com/memakura/seq2sprite/archive/master.zip), open the archive file, and copy/move `img` folder and script files starting from `seq2sprite` (`seq2sprite.bat`, `seq2sprite-s2.bat`, `seq2sprite-s3.bat`, and `seq2sprite.sh`) to other folder, for example, a new folder under your `Documents` folder.
-    - In what follows, we assume that **a folder named `seq2sprite` is created under the `Documents` folder** and that `img` and a script file is copied there.
+1. Download [the archive of this project](https://github.com/memakura/seq2sprite/archive/master.zip).
+1. Open the archive file. Copy or move `img` folder and script files starting from `seq2sprite` (`seq2sprite.bat`, `seq2sprite-s2.bat`, `seq2sprite-s3.bat`, and `seq2sprite.sh`) to other folder, for example, a new folder under your `Documents` folder.
+    - In what follows, we assume that **a folder named `seq2sprite` is created under the `Documents` folder** and that `img` and script files are copied there.
     - `img` folder contains sample images.
-    - While we use either the batch files (end with `.bat`) or the shell script (end with `.sh`), we here copy all the scripts for simplicity.
+    - While we will use either the batch files (end with `.bat`) or the shell script (end with `.sh`), we here copy all the scripts for simplicity.
 1. Open `seq2sprite` folder.
 1. Replace the sample image sequence in `img` folder with your image sequence. (You can first try with the original sample files.)
     - If you want to keep a used `img` folder, change the name to backup it and create a new empty `img` folder.
@@ -24,9 +25,17 @@ In Scratch 2, [Upload costume from file] allows you to upload multiple costumes 
     
 ### Windows (Use seq2sprite.bat)
 
-1. Double click `seq2sprite-s2.bat`. If you are using Windows 10, you will see a warning message for the first time. Click "More info" and then select "Run anyway".
-1. A folder named `work` will be created. **Wait until the opened (black) window is automatically closed.** If you are using Windows10, `work.sprite2` will also be created, and it can be imported to Scratch 2. For Scratch 3, run `seq2sprite-s3.bat` and it creates `work.sprite3`.
-1. **Only for Win7, 8, 8.1 users:** Double click `work` folder, select all the files inside, open a menu by right click, and select "Compressed (zipped) Folder" option from the "Send To" options. Then, change the name `work.zip` to `work.sprite2` or `work.sprite3` depending on the version of Scratch, and move the file oudside of the `work` folder.
+1. Double click `seq2sprite-s2.bat` (or `seq2sprite-s3.bat` for Scratch 3). 
+    - If you are using Windows 10, you will see a warning message for the first time. Click "More info" and then select "Run anyway".
+    - **Wait until the opened (black) window is automatically closed.**
+    - Do not run the script again before the window is closed.
+1. A folder named `work` will be created.  If you are using Windows10, `work.sprite2` (or `work.sprite3`) will also be created, and it can be imported to Scratch.  
+    
+    (**The following steps are for Windows 7, 8, 8.1 users**)
+1. Double click `work` folder and select all the files inside.
+1. Move cursor on the selected files and open a menu by right click.
+1. Select "Compressed (zipped) Folder" option from the "Send To" options. It will generate `work.zip`.
+1. Change the name of `work.zip` to `work.sprite2` or `work.sprite3` depending on the version of Scratch, and move the file oudside of the `work` folder.
 
 ### Mac, Linux, Windows bash (mingw, cygwin, subsystem) (Use seq2sprite.sh)
 
@@ -39,9 +48,11 @@ In Scratch 2, [Upload costume from file] allows you to upload multiple costumes 
    ```
    - Press `return` after you typed. `<user name>` should be replaced by your user name of the PC.
    - Command `cd` means change directory (folder). You can also use `pwd` and `ls` to check the path to the current folder and files/folders under the current folder, respectively. `ls` should show `img/` and `seq2sprite.sh`.
-1. Run the script by typing one of the following commands. Note the last number should be appropriately set depending on the version of Scratch.
-    - (Scratch 2) Run `./seq2sprite.sh -2`, and a file `work.sprite2` is generated.
-    - (Scratch 3) Run `./seq2sprite.sh -3`, and a file `work.sprite3` is generated.
+1. Run the script by typing one of the following two commands. Note the last number should be appropriately set depending on the version of Scratch.
+   ```
+   ./seq2sprite.sh -2  (For Scratch2. `work.sprite2` will be generated.)
+   ./seq2sprite.sh -3  (For Scratch3. `work.sprite3` will be generated.)
+   ```
 
 #### Install md5sum to Mac
 

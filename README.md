@@ -16,7 +16,7 @@ png か svg という画像ファイル<ruby>形式<rp>（</rp><rt>けいしき<
 
 ## かんたんな使い方の<ruby>説明<rp>（</rp><rt>せつめい</rt><rp>）</rp></ruby>
 
-コスチュームにしたい複数枚の画像を `img` という名前のフォルダに入れておき、ここで紹介するスクリプトを実行すると、スクラッチでスプライトとして読み込めるファイルが<ruby>出来上<rp>（</rp><rt>できあ</rt><rp>）</rp></ruby>がります。以下では使い方の詳しい<ruby>手順<rp>（</rp><rt>てじゅん</rt><rp>）</rp></ruby>を説明します。
+コスチュームにしたい複数枚の画像を `img` という名前のフォルダに入れておき、ここで紹介するスクリプトを実行すると、スクラッチでスプライトとして読み<ruby>込<rp>（</rp><rt>こ</rt><rp>）</rp></ruby>めるファイルが<ruby>出来上<rp>（</rp><rt>できあ</rt><rp>）</rp></ruby>がります。以下では使い方の詳しい<ruby>手順<rp>（</rp><rt>てじゅん</rt><rp>）</rp></ruby>を説明します。
 
 （スプライトファイルのしくみ）Scratch 2, 3 のスプライトファイルは、画像ファイルと `sprite.json` というテキストファイルをまとめて zip という形式で<ruby>圧縮<rp>（</rp><rt>あっしゅく</rt><rp>）</rp></ruby>したものです。
 
@@ -31,21 +31,31 @@ png か svg という画像ファイル<ruby>形式<rp>（</rp><rt>けいしき<
 1. `img` フォルダの中に pngファイルを複数枚入れておきます（まずはサンプルをそのまま使ってみてください）。
     - <ruby>各<rp>（</rp><rt>かく</rt><rp>）</rp></ruby>ファイル名から<ruby>拡張子<rp>（</rp><rt>かくちょうし</rt><rp>）</rp></ruby>（.pngなど）を<ruby>除<rp>（</rp><rt>のぞ</rt><rp>）</rp></ruby>いた部分（c0005.png なら c0005）がそれぞれコスチューム名になります。
     - 画像サイズは全て同じ 240x300 を<ruby>想定<rp>（</rp><rt>そうてい</rt><rp>）</rp></ruby>しています。サイズを変える場合は[こちら](#imgsize)を見てください。
-1. <ruby>環境<rp>（</rp><rt>かんきょう</rt><rp>）</rp></ruby>に合わせてスクリプトを実行するとスプライトファイルができます。<ruby>詳細<rp>（</rp><rt>しょうさい</rt><rp>）</rp></ruby>は<ruby>以下<rp>（</rp><rt>いか</rt><rp>）</rp></ruby>を見てください。**できたファイルは、上書きしないように名前を変えておくのをおすすめします**。
+1. Windows や Mac といった自分のPCの<ruby>環境<rp>（</rp><rt>かんきょう</rt><rp>）</rp></ruby>に合ったスクリプトを実行すると、スプライトファイルができます。<ruby>詳細<rp>（</rp><rt>しょうさい</rt><rp>）</rp></ruby>は<ruby>以下<rp>（</rp><rt>いか</rt><rp>）</rp></ruby>を見てください。
+    - スクラッチ2用は `.sprite2`、スクラッチ3用は `.sprite3` という拡張子のファイルをスクラッチから読み込むことができます。
+    - できたファイルは、上書きしないように名前を変えておくのをおすすめします。拡張子の部分は変えないでください。
 
-### Windows (seq2sprite.bat を<ruby>利用<rp>（</rp><rt>りよう</rt><rp>）</rp></ruby>)
+### Windows の場合 (seq2sprite.bat を<ruby>利用<rp>（</rp><rt>りよう</rt><rp>）</rp></ruby>)
 
 **ファイルエクスプローラの [<ruby>表示<rp>（</rp><rt>ひょうじ</rt><rp>）</rp></ruby>] で [ファイル名<ruby>拡張子<rp>（</rp><rt>かくちょうし</rt><rp>）</rp></ruby>を表示] にチェックを入れておくと<ruby>便利<rp>（</rp><rt>べんり</rt><rp>）</rp></ruby>です。**
 
-1. `seq2sprite-s2.bat` をダブルクリックして実行します。ダウンロードしてから初めて実行するときは、たとえば Windows 10 だと「WindowsによってPCが<ruby>保護<rp>（</rp><rt>ほご</rt><rp>）</rp></ruby>されました」と表示されるので、「詳細<ruby>情報<rp>（</rp><rt>じょうほう</rt><rp>）</rp></ruby>」をクリックしてから「実行」を<ruby>選<rp>（</rp><rt>えら</rt><rp>）</rp></ruby>んでください。
-1. すると、`work` というフォルダが出来上がります。**黒い画面が開きますが、勝手に閉じるまで待ってください。**Windows 10 を使っている場合は、`work.sprite2`というファイルも出来上がるので，これをスクラッチ2から読むことができます．スクラッチ3の場合は、`seq2sprite-s3.bat` を実行すると `work.sprite3`が出来上がるので、これを読みこみます。
-1. **Windows 7, 8, 8.1を使用している場合:** 出来上がった `work` フォルダをダブルクリックし、中にあるすべてのファイルを<ruby>選択<rp>（</rp><rt>せんたく</rt><rp>）</rp></ruby>し、右クリックを<ruby>押<rp>（</rp><rt>お</rt><rp>）</rp></ruby>して、メニューから [送る(N)] の [圧縮 (zip 形式)フォルダー] を選択します。すると、`work.zip` （すでにある場合は `work (数字).zip`）が出来上がります。スクラッチ2では、これを `work.sprite2`に、スクラッチ3では、`work.sprite3` という名前に変えて、**`work` というフォルダの外に置いておきます**。
+1. `seq2sprite-s2.bat`（スクラッチ3の場合は `seq2sprite-s3.bat`）をダブルクリックして実行します。
+    - ダウンロードしてから初めて実行するときは、Windows 10 だと「WindowsによってPCが<ruby>保護<rp>（</rp><rt>ほご</rt><rp>）</rp></ruby>されました」と表示されるので、「詳細<ruby>情報<rp>（</rp><rt>じょうほう</rt><rp>）</rp></ruby>」をクリックしてから「実行」を<ruby>選<rp>（</rp><rt>えら</rt><rp>）</rp></ruby>んでください。
+    - **黒い画面が開きますが、勝手に閉じるまで待ってください。**
+    - 同時に何回も実行しないでください。
+1. `work` というフォルダが出来上がります。Windows 10 を使っている場合は `work.sprite2`（スクラッチ3用は `work.sprite3`）というファイルも出来上がるので，これをスクラッチから読み込めます。  
+    
+    **（以下は Windows 7, 8, 8.1 を使用している場合のみ）** 
+1. 出来上がった `work` フォルダをダブルクリックし、中にあるすべてのファイルを<ruby>選択<rp>（</rp><rt>せんたく</rt><rp>）</rp></ruby>します。
+1. 選択中のファイルにマウスカーソルを合わせ、右クリックを<ruby>押<rp>（</rp><rt>お</rt><rp>）</rp></ruby>してメニューを表示します。
+1. メニューから [送る(N)] の [圧縮 (zip 形式)フォルダー] を選択します。すると、`work.zip` が出来上がります。
+1. スクラッチ2では、これを `work.sprite2`に、スクラッチ3では `work.sprite3` という名前に変えて、**`work` フォルダの外に置いておきます**。
 
 
-### Mac/Linux, Windowsのbash環境 (subsystem, mingw, cygwin) (seq2sprite.sh を利用)
+### Mac や Linux、Windows の bash 環境 (subsystem, mingw, cygwin) を使う場合 (seq2sprite.sh を利用)
 
-**（注意）zipというコマンドが<ruby>必要<rp>（</rp><rt>ひつよう</rt><rp>）</rp></ruby>です。
-さらに Scratch 3 ではmd5sumというコマンドも使います。zipは<ruby>最初<rp>（</rp><rt>さいしょ</rt><rp>）</rp></ruby>から入っていることが多いです。md5sum は、Macであれば別にインストールする必要があります（あとで説明）。**
+**（注意）zip というコマンドが<ruby>必要<rp>（</rp><rt>ひつよう</rt><rp>）</rp></ruby>です。
+さらに Scratch 3 では md5sum というコマンドも使います。zipは<ruby>最初<rp>（</rp><rt>さいしょ</rt><rp>）</rp></ruby>から入っていることが多いです。md5sum は、Macであれば別にインストールする必要があります（あとで説明）。**
 
 1. bash の使えるターミナルを開きます。(Macは Launchpad や Spotlight<ruby>検索<rp>（</rp><rt>けんさく</rt><rp>）</rp></ruby>で、ter.. ぐらいを打ち<ruby>込<rp>（</rp><rt>こ</rt><rp>）</rp></ruby>むとターミナルを<ruby>選<rp>（</rp><rt>えら</rt><rp>）</rp></ruby>べます。）
 1. スクリプトや `img` フォルダのある場所に行きます。Macだと、[書類] の下に `seq2sprite` というフォルダを作成してコピーしたのであれば、以下を打ち込んでフォルダを移動します。
@@ -54,9 +64,11 @@ png か svg という画像ファイル<ruby>形式<rp>（</rp><rt>けいしき<
    ```
     - <ruby>最後<rp>（</rp><rt>さいご</rt><rp>）</rp></ruby>に return を押します。<ruby>途中<rp>（</rp><rt>とちゅう</rt><rp>）</rp></ruby>でtabキーを押すとファイル名などが<ruby>補完<rp>（</rp><rt>ほかん</rt><rp>）</rp></ruby>できます。`<ユーザ名>`のところには、PCで使っている自分のユーザ名を入れます。
     - コマンド `cd` を使うと、今いるフォルダを移動します。また、`pwd` は今いるフォルダを、`ls` は今いるフォルダの中身を見ることができます（`img/` や `seq2sprite.sh` が表示されるはずです。)
-1. ターミナルでスクリプトを実行します。スクラッチ2とスクラッチ3で、最後の数字が違うので注意してください。
-    - `./seq2sprite.sh -2` と打ち込んでreturnキーを押すと、`work.sprite2` というファイルが出来上がるので、このファイルをスクラッチ2から読みこむことができます。
-    - `./seq2sprite.sh -3` と打ち込んでreturnキーを押すと、`work.sprite3` というファイルが出来上がるので、このファイルをスクラッチ3から読みこむことができます。
+1. ターミナルで以下のどちらかを打ち込んで return キーを押し、スクリプトを実行します。スクラッチ2とスクラッチ3で、最後の数字が違うので注意してください。
+   ```
+   ./seq2sprite.sh -2  （スクラッチ2の場合。`work.sprite2` というファイルが出来上がります。）
+   ./seq2sprite.sh -3  （スクラッチ3の場合。`work.sprite3` というファイルが出来上がります。）
+   ```
 
 #### Mac に md5sum をインストールする方法
 
@@ -118,3 +130,4 @@ pngではなくsvgファイルを使う場合は `EXT=png` を `EXT=svg` に変�
 他の人が<ruby>撮影<rp>（</rp><rt>さつえい</rt><rp>）</rp></ruby>した映像や映像素材は<ruby>著作権<rp>（</rp><rt>ちょさくけん</rt><rp>）</rp></ruby>があり、自由に何にでも使えるわけではないですが、映像によっては、プロジェクトに使えるものがあります。クレジット（<ruby>誰<rp>（</rp><rt>だれ</rt><rp>）</rp></ruby>の映像か、どこから取ってきたか）を書く必要があるものも多いです。
 
 [https://www.techradar.com/news/the-best-free-stock-video-sites](https://www.techradar.com/news/the-best-free-stock-video-sites) などでもいろいろな映像素材サイトが紹介されています。たとえば [Videvo (Free Stock Video Footage)](https://www.videvo.net/) では自由に使えるライセンスでの公開が多いようでした（[ライセンスの詳細はこちら](https://www.videvo.net/faqs/)）。
+
