@@ -92,7 +92,7 @@ for %%f in (%IMG_DIR%\*.%EXT%) do (
     rem @echo !i!
 )
 
-if %SCRATCH_VER == 2 (
+if %SCRATCH_VER% == 2 (
     (
         echo 		}],
         echo 	"currentCostumeIndex": 0,
