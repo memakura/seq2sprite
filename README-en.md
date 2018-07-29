@@ -4,7 +4,7 @@
 
 Convert a sequence of images (png, svg) to a sprite file that can be imported to your Scratch project.
 
-In Scratch 2, [Upload costume from file] allows you to upload multiple costumes at once but does not maintain the original order of image files. In addition, it seems Scratch3 does not allow multiple upload of costumes. Using the sprite generator tool introduced here, you can create a sprite that has a lot of costumes in the same order as the original image-name order. This can be utilized for projects using, for example, realistic animations. ([Demo video](#demovideo))
+Scratch 2.0 allows you to upload multiple image files at the same time using [Upload costume from file] but the original order of the image files is not maintained in the costume window. It seems Scratch 3.0 does not allow uploading multiple images at once (at least in its preview version). Using the sprite generator tool introduced here, you can create a sprite that has a lot of costumes in the same order as the original file-name order. This can be utilized for projects using, for example, realistic animations. ([Demo video](#demovideo))
 
 ![flow](readme_figs/flow-en.png)
 
