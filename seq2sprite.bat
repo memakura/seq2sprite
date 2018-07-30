@@ -1,6 +1,7 @@
 @echo off
 
-rem 2018.7 by memakura
+rem Copyright (c) 2018 Hiroaki Kawashima (memakura)
+rem This software is released under the MIT License, see LICENSE.txt.
 
 setlocal enabledelayedexpansion
 

@@ -109,3 +109,7 @@ by DL Stock Footage. They also provide several other nice video clips.
 ## About other video clips
 
 [https://www.techradar.com/news/the-best-free-stock-video-sites](https://www.techradar.com/news/the-best-free-stock-video-sites) introduces many free stock video sites. For example, [Videvo (Free Stock Video Footage)](https://www.videvo.net/) has many useful videos with a free license ([see here for the details of license information](https://www.videvo.net/faqs/)).
+
+## License of the scripts
+
+This software is released under the MIT License, see LICENSE.txt.

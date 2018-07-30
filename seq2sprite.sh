@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# 2018.7 by memakura
+# Copyright (c) 2018 Hiroaki Kawashima (memakura)
+# This software is released under the MIT License, see LICENSE.txt.
 
 # ===========================================================
 # Set your image size here. (Do not insert space around '=')

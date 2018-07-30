@@ -133,3 +133,6 @@ Windows でメモ帳を開くには、左下の「ここに入力して検索」
 
 [https://www.techradar.com/news/the-best-free-stock-video-sites](https://www.techradar.com/news/the-best-free-stock-video-sites) などでもいろいろな映像素材サイトが紹介されています。たとえば [Videvo (Free Stock Video Footage)](https://www.videvo.net/) では自由に使えるライセンスでの公開が多いようでした（[ライセンスの詳細はこちら](https://www.videvo.net/faqs/)）。
 
+## スクリプトのライセンスについて
+
+MIT ライセンスです。License.txt を見てください。
