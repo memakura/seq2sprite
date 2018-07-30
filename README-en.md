@@ -87,15 +87,15 @@ Scratch 2.0 allows you to upload multiple image files at the same time using [Up
 
 ## Use different image size or SVG files
 
-If each image size is different from 240 x 300, open a script file (`seq2sprite.bat` or `seq2sprite.sh`), and change the following lines. Recommended numbers are the half of your image size (each of width and height).
+If your image size is different from 240 x 300, open a script file (`seq2sprite.bat` or `seq2sprite.sh`), and change the following numbers. Do not insert space around '='. 
+The image center will be automatically set as the center of the sprite.
 
 ```
-    "rotationCenterX": 120,
-    "rotationCenterY": 150
+    WIDTH=240
+    HEIGHT=300
 ```
 
 If you want to use svg files, change `EXT=png` to `EXT=svg`.
-
 
 ## About the sample images (credit)
 

@@ -1,11 +1,23 @@
 #!/bin/bash
 
-# 2018.7.22-25 memakura
+# 2018.7 by memakura
+
+# ===========================================================
+# Set your image size here. (Do not insert space around '=')
+WIDTH=240
+HEIGHT=300
+# ===========================================================
 
 IMG_DIR=img
 WORK_DIR=work
 JSON=$WORK_DIR/sprite.json
 EXT=png
+
+# Set the center of sprite
+CX=$((WIDTH / 2))
+CY=$((HEIGHT / 2))
+
+# Set default scratch version
 SCRATCH_VER=2
 
 usage_exit() {
@@ -26,6 +38,7 @@ while getopts 23h OPT; do
     esac
 done
 
+# Set file extension (sprite2 or sprite3)
 SPRITE_EXT=sprite$SCRATCH_VER
 
 # Check commands
@@ -108,8 +121,8 @@ EOD
 			"baseLayerID": $i,
 			"baseLayerMD5": "$md5str.$EXT",
 			"bitmapResolution": 1,
-			"rotationCenterX": 120,
-			"rotationCenterY": 150
+			"rotationCenterX": $CX,
+			"rotationCenterY": $CY
 EOD
         # Copy each image file to work directory
         cp $f $WORK_DIR/$i.$EXT
@@ -120,8 +133,8 @@ EOD
 			"bitmapResolution": 1,
 			"md5ext": "$md5str.$EXT",
 			"dataFormat": "$EXT",
-			"rotationCenterX": 120,
-			"rotationCenterY": 150
+			"rotationCenterX": $CX,
+			"rotationCenterY": $CY
 EOD
         # Copy each image file to work directory
         cp $f $WORK_DIR/$md5str.$EXT

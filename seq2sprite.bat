@@ -1,18 +1,30 @@
 @echo off
 
-rem 2018.7.21-25 memakura
+rem 2018.7 by memakura
 
 setlocal enabledelayedexpansion
 
 set PATH=%PATH%;%SYSTEMROOT%\System32
+
+rem ===========================================================
+rem Set your image size here. (Do not insert space around '=')
+set WIDTH=240
+set HEIGHT=300
+rem ===========================================================
 
 set IMG_DIR=img
 set WORK_DIR=work
 set JSON=%WORK_DIR%\sprite.json
 set EXT=png
 
+rem Set the center of sprite
+set /a CX=%WIDTH%/2
+set /a CY=%HEIGHT%/2
+
+rem Set default scratch version
 if "%SCRATCH_VER%" == "" set SCRATCH_VER=2
 
+rem Set file extension (sprite2 or sprite3)
 set SPRITE_EXT=sprite%SCRATCH_VER%
 
 if not exist %IMG_DIR% (
@@ -69,8 +81,8 @@ for %%f in (%IMG_DIR%\*.%EXT%) do (
             echo 			"baseLayerID": !i!,
             echo 			"baseLayerMD5": "!md5str!.%EXT%",
             echo 			"bitmapResolution": 1,
-            echo 			"rotationCenterX": 120,
-            echo 			"rotationCenterY": 150
+            echo 			"rotationCenterX": %CX%,
+            echo 			"rotationCenterY": %CY%
         ) >> %JSON%
         rem Copy each image file to work directory
         copy %%f %WORK_DIR%\!i!.%EXT%
@@ -81,8 +93,8 @@ for %%f in (%IMG_DIR%\*.%EXT%) do (
             echo 			"bitmapResolution": 1,
             echo 			"md5ext": "!md5str!.%EXT%",
             echo 			"dataFormat": "%EXT%",
-            echo 			"rotationCenterX": 120,
-            echo 			"rotationCenterY": 150
+            echo 			"rotationCenterX": %CX%,
+            echo 			"rotationCenterY": %CY%
         ) >> %JSON%
         rem Copy each image file to work directory
         copy %%f %WORK_DIR%\!md5str!.%EXT%
