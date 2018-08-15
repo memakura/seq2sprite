@@ -80,8 +80,17 @@ Scratch 2.0 allows you to upload multiple image files at the same time using [Up
 
 ### Demo Video
 
+#### Use with Scratch 2
+
 <iframe width="522" height="315" src="https://www.youtube.com/embed/7QLjaB54ZRM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+- [(Scratch2 project page)](https://scratch.mit.edu/projects/237552331/) 
+
+#### Project with micro:bit
+
+<iframe width="522" height="294" src="https://www.youtube.com/embed/KzGXYWzM-XU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+- [Scratch2 offline extension called Smi:be](https://memakura.github.io/s2microbit-ble/#English) is used in this project.
 
 <a name="imgsize">
 

@@ -97,9 +97,17 @@ png か svg という画像ファイル<ruby>形式<rp>（</rp><rt>けいしき<
 
 ### デモビデオ
 
+#### Scratch2で動かしてみる
+
 <iframe width="522" height="315" src="https://www.youtube.com/embed/7QLjaB54ZRM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-- [Scratch2で動かしてみる](https://scratch.mit.edu/projects/237552331/)
+- [（Scratch2のプロジェクトページ）](https://scratch.mit.edu/projects/237552331/)
+
+#### micro:bitと組み合わせたプロジェクト
+
+<iframe width="522" height="294" src="https://www.youtube.com/embed/KzGXYWzM-XU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+- このプロジェクトでは[Scratch2オフライン用micro:bit拡張ブロック (Smi:be)](https://memakura.github.io/s2microbit-ble/)を使用しています。
 
 <a name="imgsize">
 
