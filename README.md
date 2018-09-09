@@ -3,7 +3,9 @@
 [(English)](README-en.md)
 
 スクラッチ2.0の「ファイルから新しいコスチュームをアップロード」でたくさんの<ruby>画像<rp>（</rp><rt>がぞう</rt><rp>）</rp></ruby>を読むと、<ruby>順序<rp>（</rp><rt>じゅんじょ</rt><rp>）</rp></ruby>がばらばらになって<ruby>大変<rp>（</rp><rt>たいへん</rt><rp>）</rp></ruby>です。スクラッチ3.0では（今のところ？）<ruby>複数<rp>（</rp><rt>ふくすう</rt><rp>）</rp></ruby>のコスチュームをまとめてアップロードすることはできないようです。
-ここで<ruby>紹介<rp>（</rp><rt>しょうかい</rt><rp>）</rp></ruby>する seq2sprite（シーケンス・トゥー・スプライト）というツールを使うと、元の画像ファイル名と同じ順に、多くのコスチュームを持つようなスプライトを作ることができます。たとえばスクラッチでアニメーションを使ったプロジェクトを作るときなどに役に立ちます。（[デモビデオ](#demovideo)）
+ここで<ruby>紹介<rp>（</rp><rt>しょうかい</rt><rp>）</rp></ruby>する seq2sprite（シーケンス・トゥー・スプライト）というツールを使うと、元の画像ファイル名と同じ順に、多くのコスチュームを持つようなスプライトを作ることができます。たとえばスクラッチでアニメーションを使ったプロジェクトを作るときなどに役に立ちます。以下はロウソクを使ったデモです。（[他のデモビデオ](#demovideo)）
+
+<iframe width="522" height="315" src="https://www.youtube.com/embed/7QLjaB54ZRM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 png か svg という画像ファイル<ruby>形式<rp>（</rp><rt>けいしき</rt><rp>）</rp></ruby>を使えます。スクラッチ2 と スクラッチ3 のどちらにも<ruby>対応<rp>（</rp><rt>たいおう</rt><rp>）</rp></ruby>しています。
 
@@ -95,13 +97,11 @@ png か svg という画像ファイル<ruby>形式<rp>（</rp><rt>けいしき<
 
 <a name="demovideo">
 
-### デモビデオ
+### デモ
 
 #### Scratch2で動かしてみる
 
-<iframe width="522" height="315" src="https://www.youtube.com/embed/7QLjaB54ZRM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-- [（Scratch2のプロジェクトページ）](https://scratch.mit.edu/projects/237552331/)
+- [Scratch2でロウソクの映像を動かすプロジェクト](https://scratch.mit.edu/projects/237552331/)
 
 #### micro:bitと組み合わせたプロジェクト
 
