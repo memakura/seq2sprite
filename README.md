@@ -105,9 +105,17 @@ png か svg という画像ファイル<ruby>形式<rp>（</rp><rt>けいしき<
 
 #### micro:bitと組み合わせたプロジェクト
 
+- 吹いた強さでロウソクの動きを変えます。このプロジェクトでは[Scratch2オフライン用micro:bit拡張ブロック (Smi:be)](https://memakura.github.io/s2microbit-ble/)を使用しています。
+
 <iframe width="522" height="294" src="https://www.youtube.com/embed/KzGXYWzM-XU?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-- このプロジェクトでは[Scratch2オフライン用micro:bit拡張ブロック (Smi:be)](https://memakura.github.io/s2microbit-ble/)を使用しています。
+
+#### マイクと組み合わせたプロジェクト
+
+- <a href="https://scratch.mit.edu/projects/243252651/" target="_blank">このプロジェクト</a>ではマイクを使ってロウソクの動きを変えます。
+- <a href="https://memakura.github.io/scratch-singer/" target="_blank">歌声合成用ツールの scratch-singer</a>と組み合わせると、<a href="https://scratch.mit.edu/projects/243360901/" target="_blank">こんな感じに応用できて</a>、バースデーケーキのロウソクを消す部分も加えることができます。
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/95dDLoJVVFg?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 <a name="imgsize">
 
